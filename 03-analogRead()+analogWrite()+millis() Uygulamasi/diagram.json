@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -101.6,
+      "left": 183.5,
+      "attrs": { "common": "cathode" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -87.7, "left": 278.2, "attrs": {} }
+  ],
+  "connections": [
+    [ "rgb1:B", "uno:3", "blue", [ "v0", "h11.2" ] ],
+    [ "rgb1:G", "uno:5", "green", [ "v0" ] ],
+    [ "rgb1:R", "uno:6", "red", [ "v19.2", "h9.6" ] ],
+    [ "rgb1:COM", "uno:GND.1", "black", [ "v-0.4", "h-67.1" ] ],
+    [ "pot1:SIG", "uno:A5", "green", [ "v230.4", "h-58" ] ],
+    [ "pot1:GND", "uno:GND.3", "black", [ "v240", "h-124.8" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v249.6", "h-154.4" ] ]
+  ],
+  "dependencies": {}
+}
