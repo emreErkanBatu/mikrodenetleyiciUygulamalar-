@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 10.2, "left": 153, "attrs": {} },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -240.01,
+      "left": 349.02,
+      "attrs": { "size": "8", "arrow": "orange" }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper2",
+      "top": -240.01,
+      "left": 253.02,
+      "attrs": { "size": "8", "arrow": "orange" }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper3",
+      "top": -240.01,
+      "left": 157.02,
+      "attrs": { "size": "8", "arrow": "orange" }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv1",
+      "top": -139,
+      "left": 360.4,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv2",
+      "top": -139,
+      "left": 264.4,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv3",
+      "top": -139,
+      "left": 168.4,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "stepper3:A-", "drv3:2B", "green", [ "v0" ] ],
+    [ "stepper3:A+", "drv3:2A", "green", [ "v0" ] ],
+    [ "stepper3:B+", "drv3:1A", "green", [ "v0" ] ],
+    [ "stepper3:B-", "drv3:1B", "green", [ "v0" ] ],
+    [ "stepper2:A-", "drv2:2B", "green", [ "v0" ] ],
+    [ "stepper2:A+", "drv2:2A", "green", [ "v0" ] ],
+    [ "stepper2:B+", "drv2:1A", "green", [ "v0" ] ],
+    [ "stepper2:B-", "drv2:1B", "green", [ "v0" ] ],
+    [ "stepper1:A-", "drv1:2B", "green", [ "v0" ] ],
+    [ "stepper1:A+", "drv1:2A", "green", [ "v0" ] ],
+    [ "stepper1:B+", "drv1:1A", "green", [ "v0" ] ],
+    [ "stepper1:B-", "drv1:1B", "green", [ "v0" ] ],
+    [ "drv2:STEP", "uno:1", "blue", [ "v19.2", "h86.4" ] ],
+    [ "drv1:STEP", "uno:0", "green", [ "v96" ] ],
+    [ "drv3:STEP", "uno:2", "orange", [ "v28.8", "h163.2" ] ],
+    [ "drv1:DIR", "uno:3", "purple", [ "v48", "h-38.4" ] ],
+    [ "drv2:DIR", "uno:4", "yellow", [ "v48", "h38.4" ] ],
+    [ "drv3:DIR", "uno:5", "cyan", [ "v57.6", "h124.8" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "black", [ "v9.6", "h-9.6" ] ],
+    [ "drv2:SLEEP", "drv2:RESET", "black", [ "v9.6", "h-9.6" ] ],
+    [ "drv3:SLEEP", "drv3:RESET", "black", [ "v9.6", "h-9.6" ] ]
+  ],
+  "dependencies": {}
+}
