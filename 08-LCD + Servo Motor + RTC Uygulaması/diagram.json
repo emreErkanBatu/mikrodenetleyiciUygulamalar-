@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 125.4, "left": -327, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -49,
+      "left": 21,
+      "rotate": 270,
+      "attrs": { "hornColor": "#000088" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": -49,
+      "left": 88.2,
+      "rotate": 270,
+      "attrs": { "hornColor": "#000088" }
+    },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -63.77, "left": -291.2, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 58.36, "left": 57.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 153.6, "left": 143.4, "attrs": {} },
+    {
+      "type": "wokwi-ds1307",
+      "id": "rtc1",
+      "top": 187.3,
+      "left": -31.6,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "lcd1:D7", "uno:7", "green", [ "v0" ] ],
+    [ "lcd1:D6", "uno:8", "green", [ "v48", "h-9.4", "v19.2" ] ],
+    [ "lcd1:D5", "uno:9", "green", [ "v38.4", "h-9.5" ] ],
+    [ "lcd1:D4", "uno:10", "green", [ "v28.8", "h-9.6" ] ],
+    [ "lcd1:E", "uno:11", "green", [ "v28.8", "h28.8" ] ],
+    [ "lcd1:RW", "uno:GND.1", "black", [ "v48", "h9.5" ] ],
+    [ "lcd1:RS", "uno:12", "green", [ "v38.4", "h29.1" ] ],
+    [ "servo1:PWM", "uno:6", "blue", [ "v9.6", "h-239.8", "v28.8" ] ],
+    [ "servo2:PWM", "uno:5", "orange", [ "v19.2", "h-345.4" ] ],
+    [ "servo1:V+", "vcc1:VCC", "red", [ "v38.4", "h-67.1" ] ],
+    [ "servo2:V+", "vcc1:VCC", "red", [ "v38.4", "h-201.5" ] ],
+    [ "gnd1:GND", "servo2:GND", "black", [ "v0" ] ],
+    [ "servo1:GND", "gnd1:GND", "black", [ "v0" ] ],
+    [ "rtc1:SCL", "uno:A5", "blue", [ "v76.8", "h-19.4" ] ],
+    [ "rtc1:SDA", "uno:A4", "orange", [ "v86.4", "h-29.1" ] ],
+    [ "rtc1:5V", "vcc1:VCC", "red", [ "v19.2", "h66.8", "v-153.6", "h-38.4" ] ],
+    [ "rtc1:GND", "gnd1:GND", "black", [ "v28.8", "h86.4", "v-153.6" ] ]
+  ],
+  "dependencies": {}
+}
