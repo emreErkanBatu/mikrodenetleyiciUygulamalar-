@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 67.8, "left": -173.4, "attrs": {} },
+    { "type": "wokwi-ir-receiver", "id": "ir1", "top": -174.15, "left": 75.02, "attrs": {} },
+    { "type": "wokwi-ir-remote", "id": "remote1", "top": -48, "left": 124.8, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -154.6,
+      "left": -190.2,
+      "rotate": 270,
+      "attrs": { "hornColor": "#000088" }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv1",
+      "top": -81.4,
+      "left": -23.6,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper1",
+      "top": -172.81,
+      "left": -34.98,
+      "attrs": { "size": "8", "arrow": "orange" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -128.4,
+      "left": -217,
+      "attrs": { "color": "red" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 0, "left": -240.6, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -28.04, "left": -67.2, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": -104.84, "left": 144, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -67.2, "left": 85.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -52.8,
+      "left": -211.75,
+      "rotate": 90,
+      "attrs": { "value": "470" }
+    }
+  ],
+  "connections": [
+    [ "drv1:2B", "stepper1:A-", "green", [ "v0" ] ],
+    [ "drv1:2A", "stepper1:A+", "green", [ "v0" ] ],
+    [ "drv1:1A", "stepper1:B+", "green", [ "v0" ] ],
+    [ "drv1:1B", "stepper1:B-", "green", [ "v0" ] ],
+    [ "drv1:SLEEP", "drv1:RESET", "black", [ "v9.6", "h-9.6" ] ],
+    [ "ir1:DAT", "uno:2", "green", [ "v86.4", "h-52.1" ] ],
+    [ "drv1:DIR", "uno:3", "orange", [ "v19.2", "h9.6" ] ],
+    [ "drv1:STEP", "uno:4", "gold", [ "v28.8", "h9.6" ] ],
+    [ "servo1:PWM", "uno:5", "blue", [ "v28.8", "h125" ] ],
+    [ "gnd1:GND", "servo1:GND", "black", [ "h86.4", "v-9.6" ] ],
+    [ "led1:C", "gnd1:GND", "black", [ "v86.4", "h-9.2" ] ],
+    [ "vcc1:VCC", "servo1:V+", "red", [ "h-48", "v-9.6" ] ],
+    [ "vcc2:VCC", "ir1:VCC", "red", [ "v9.6", "h38.4" ] ],
+    [ "gnd2:GND", "ir1:GND", "black", [ "v0" ] ],
+    [ "led1:A", "r1:1", "cyan", [ "v0", "h9.6" ] ],
+    [ "r1:2", "uno:6", "cyan", [ "h0", "v46.8", "h201.6" ] ]
+  ],
+  "dependencies": {}
+}
