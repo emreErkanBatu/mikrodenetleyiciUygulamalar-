@@ -42,3 +42,6 @@
 
 [![YouTube Video](https://img.youtube.com/vi/L-i5IGGmew4/sddefault.jpg)](https://youtu.be/L-i5IGGmew4) 
 
+<h2>12-analogRead + analogWrite + map Uygulaması</h2>
+
+[![YouTube Video](https://img.youtube.com/vi/ntMBeuWF5r8/sddefault.jpg)](https://youtu.be/ntMBeuWF5r8) 
