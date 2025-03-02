@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 29.4, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -24,
+      "left": 201.05,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -24,
+      "left": 181.85,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -24,
+      "left": 162.65,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -118.8, "left": 167, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -118.8,
+      "left": 186.2,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -118.8,
+      "left": 205.4,
+      "attrs": { "color": "blue" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -38.4, "left": 153, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 27.5, "left": 307, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": 27.5, "left": 393.4 ,"attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 115.2, "left": 306.6, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 39.16, "left": 489.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "r1:2", "uno:3", "green", [ "h0" ] ],
+    [ "r2:2", "uno:5", "orange", [ "h0" ] ],
+    [ "r3:2", "uno:6", "purple", [ "h0" ] ],
+    [ "r1:1", "led3:A", "green", [ "h0" ] ],
+    [ "led2:A", "r2:1", "orange", [ "v0" ] ],
+    [ "led1:A", "r3:1", "purple", [ "v0" ] ],
+    [ "gnd1:GND", "led1:C", "black", [ "v-19.2", "h19.2" ] ],
+    [ "led1:C", "led2:C", "black", [ "v19.2", "h0.4" ] ],
+    [ "led3:C", "led2:C", "black", [ "v19.2", "h-18.8" ] ],
+    [ "pot1:SIG", "uno:A1", "violet", [ "v144", "h-125.2" ] ],
+    [ "pot2:SIG", "uno:A0", "blue", [ "v153.6", "h-221.2" ] ],
+    [ "gnd2:GND", "pot1:GND", "black", [ "v0", "h19.2" ] ],
+    [ "pot2:GND", "gnd2:GND", "black", [ "v0" ] ],
+    [ "vcc1:VCC", "pot2:VCC", "red", [ "v48", "h0", "v9.6", "h-57.6" ] ],
+    [ "pot1:VCC", "pot2:VCC", "red", [ "v28.8", "h85.6", "v-9.6" ] ]
+  ],
+  "dependencies": {}
+}
