@@ -45,3 +45,7 @@
 <h2>12-analogRead + analogWrite + map Uygulaması</h2>
 
 [![YouTube Video](https://img.youtube.com/vi/ntMBeuWF5r8/sddefault.jpg)](https://youtu.be/ntMBeuWF5r8) 
+
+<h2>13-millis() Uygulaması</h2>
+
+[![YouTube Video](https://img.youtube.com/vi/2TSrdAWpgKs/sddefault.jpg)](https://youtu.be/2TSrdAWpgKs) 
