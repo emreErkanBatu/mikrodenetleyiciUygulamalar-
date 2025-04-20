@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -198.17, "left": 54.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "lcd1:RS", "uno:12", "green", [ "v38.4", "h19.5" ] ],
+    [ "uno:GND.1", "lcd1:RW", "black", [ "v-28.2", "h9.3" ] ],
+    [ "lcd1:E", "uno:11", "orange", [ "v28.8", "h9.6" ] ],
+    [ "lcd1:D7", "uno:7", "gray", [ "v57.6", "h-18.9" ] ],
+    [ "lcd1:D6", "uno:8", "gold", [ "v48", "h-28.6" ] ],
+    [ "lcd1:D5", "uno:9", "limegreen", [ "v38.4", "h-28.7" ] ],
+    [ "lcd1:D4", "uno:10", "blue", [ "v28.8", "h-28.8" ] ]
+  ],
+  "dependencies": {}
+}
